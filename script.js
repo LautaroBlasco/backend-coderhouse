@@ -1,5 +1,9 @@
 var Usuario = /** @class */ (function () {
-    function Usuario() {
+    function Usuario(nombre, apellido, libros, mascotas) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.libros = libros;
+        this.mascotas = mascotas;
     }
     Usuario.prototype.getFullName = function () {
         return "".concat(this.nombre, " ").concat(this.apellido);
@@ -18,16 +22,7 @@ var Usuario = /** @class */ (function () {
     };
     return Usuario;
 }());
-var lautaro = new Usuario();
-lautaro.nombre = 'lautaro';
-lautaro.apellido = 'Blasco';
-lautaro.libros = [
-    {
-        titulo: 'javascript',
-        autor: 'godeto'
-    }
-];
-lautaro.mascotas = [];
+var lautaro = new Usuario('lautaro', 'Blasco', [{ titulo: 'javascript', autor: 'godeto' }], ['Walter']);
 console.log(lautaro.getBookNames());
 lautaro.addBook('El señor de los anillos', 'pepe argento');
 lautaro.addMascota('Brisa');
