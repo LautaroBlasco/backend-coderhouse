@@ -9,6 +9,15 @@ class Usuario {
   libros: Libro[];
   mascotas: string[];
 
+  constructor(nombre: string, apellido: string, libros: Libro[], mascotas: string[]) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.libros = libros;
+    this.mascotas = mascotas;
+  }
+
+
+
 
   getFullName(): string {
     return `${this.nombre} ${this.apellido}`
@@ -30,17 +39,11 @@ class Usuario {
   }
 }
 
-let lautaro: Usuario = new Usuario()
-
-lautaro.nombre = 'lautaro'
-lautaro.apellido = 'Blasco'
-lautaro.libros = [
-  {
-    titulo: 'javascript',
-    autor: 'godeto',
-  }
-]
-lautaro.mascotas = []
+let lautaro: Usuario = new Usuario(
+  'lautaro',
+  'Blasco',
+  [{ titulo: 'javascript', autor: 'godeto' }],
+  ['Walter'])
 
 console.log(lautaro.getBookNames())
 lautaro.addBook('El señor de los anillos', 'pepe argento')
